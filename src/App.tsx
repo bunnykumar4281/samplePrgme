@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useRef }  from 'react';
 import './App.css';
+import COMP1 from './Components/COMP1/COMP1';
+import Counter from './Components/Counter/Counter';
+import Hover from './Components/Hover/Hover';
+import Input from './Components/Input'
+
+
 
 function App() {
+  const firstRef=useRef<HTMLInputElement>(null);
+  const secondRef=useRef<HTMLInputElement>(null);
+  useEffect( ()=>{
+    secondRef.current?.focus();
+  }
+
+  )
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ <h1>Usref and forwardRef</h1>
+<Input type="text" ref={firstRef} name="name1" placeholder="enter Text"/>
+<br/>
+<Input type="text" ref={secondRef} name="name1" placeholder="enter Text"/>
     </div>
   );
 }
