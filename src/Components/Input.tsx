@@ -1,7 +1,6 @@
 import React from 'react'
 
 
-
 function Input(props:any,ref:any) {
     const {text,placeholder,name}=props;
     return (
